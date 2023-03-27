@@ -1,5 +1,6 @@
 import math
 
+
 def find_sum_of_two_primes(number: int) -> list[tuple[int, int]]:
     """Finding 2 prime numbers that sum of them = number.
      Returning list of tuples,each tuple is 2 prime numbers"""
@@ -8,9 +9,10 @@ def find_sum_of_two_primes(number: int) -> list[tuple[int, int]]:
 
     # finding two prime numbers that sum of them is the number we are checking
     for first_num in range(2, half_of_number):
-        if is_num_prime(first_num) and is_num_prime(number - first_num):  # is first and second number are prime
+        if is_num_prime(first_num):
             second_num = number - first_num
-            list_of_tuples_for_return.append((first_num, second_num))
+            if is_num_prime(number - first_num):
+                list_of_tuples_for_return.append((first_num, second_num))
 
     return list_of_tuples_for_return
 
