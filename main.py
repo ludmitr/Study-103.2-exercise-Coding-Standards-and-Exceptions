@@ -1,5 +1,6 @@
 def find_sum_of_two_primes(number: int) -> list[tuple[int, int]]:
-    """Finding 2 prime numbers that sum of them = number. Returning list of tuples,each tuple is 2 prime numbers"""
+    """Finding 2 prime numbers that sum of them = number.
+     Returning list of tuples,each tuple is 2 prime numbers"""
     list_of_tuples_for_return = []
     # finding two prime numbers that sum of them is the number we are checking
     half_of_number = int(number/2) + 1  # to prevent repeating same result
@@ -8,10 +9,6 @@ def find_sum_of_two_primes(number: int) -> list[tuple[int, int]]:
             second_num = number - first_num
             list_of_tuples_for_return.append((first_num, second_num))
     return list_of_tuples_for_return
-
-
-def is_num_odd(number: int) -> bool:
-    return number % 2 == 1
 
 
 def is_num_prime(number: int) -> bool:
