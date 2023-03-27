@@ -1,3 +1,5 @@
+import math
+
 def find_sum_of_two_primes(number: int) -> list[tuple[int, int]]:
     """Finding 2 prime numbers that sum of them = number.
      Returning list of tuples,each tuple is 2 prime numbers"""
@@ -12,12 +14,19 @@ def find_sum_of_two_primes(number: int) -> list[tuple[int, int]]:
 
 
 def is_num_prime(number: int) -> bool:
-    divisor = 2
+    if number <= 1:
+        return False
+    if number == 2:
+        return True
+    if number % 2 == 0:
+        return False
 
-    while divisor < number:
-        if number % divisor == 0:
+    boundary = int(math.floor(math.sqrt(number)))
+
+    for i in range(3, boundary + 1, 2):
+        if number % i == 0:
             return False
-        divisor += 1
+
     return True
 
 
