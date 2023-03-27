@@ -4,9 +4,9 @@ def find_sum_of_two_primes(number: int) -> list[tuple[int, int]]:
     """Finding 2 prime numbers that sum of them = number.
      Returning list of tuples,each tuple is 2 prime numbers"""
     list_of_tuples_for_return = []
+    half_of_number = int(number/2) + 1  # to prevent repeating same result
 
     # finding two prime numbers that sum of them is the number we are checking
-    half_of_number = int(number/2) + 1  # to prevent repeating same result
     for first_num in range(2, half_of_number):
         if is_num_prime(first_num) and is_num_prime(number - first_num):  # is first and second number are prime
             second_num = number - first_num
