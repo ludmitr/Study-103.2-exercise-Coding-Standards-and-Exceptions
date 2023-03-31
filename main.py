@@ -11,7 +11,7 @@ def find_sum_of_two_primes(number: int) -> list[tuple[int, int]]:
     for first_num in range(2, half_of_number):
         if is_num_prime(first_num):
             second_num = number - first_num
-            if is_num_prime(number - first_num):
+            if is_num_prime(second_num):
                 list_of_tuples_for_return.append((first_num, second_num))
 
     return list_of_tuples_for_return
